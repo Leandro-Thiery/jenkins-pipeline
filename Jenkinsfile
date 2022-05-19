@@ -31,7 +31,7 @@ pipeline {
         .'
         sh 'docker login -u leandrothiery -p $DOCKER_PWD'
         sh 'docker image push $registry:$BUILD_NUMBER'
-        sh "docker image rm $registry:$BUILD_NUMBER"
+        sh 'docker image rm $registry:$BUILD_NUMBER'
       }
     }
     stage('Deploy and smoke test') {
