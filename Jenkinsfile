@@ -6,7 +6,7 @@ pipeline {
   agent {
     docker {
       image 'thingswise/node-docker'
-      args '-p 3000:3000 -w /app -v /var/run/docker.sock:/var/run/docker.sock'
+      args "--publish list 3000:3000 -w /app -v /var/run/docker.sock:/var/run/docker.sock"
       args '--entrypoint=\'\''
     }
   }
